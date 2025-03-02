@@ -31,7 +31,8 @@
   width: 276px;
   height: 44px;
   font-weight: 600;
-  line-height: 32px;
+font-size: 16px;
+line-height: 125%;
   transition: background-color var(--transition);
 }
 .btn:hover {
