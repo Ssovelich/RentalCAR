@@ -25,4 +25,3 @@ Author 🖋️
 
 Stanislav Sova, Fullstack developer GitHub: https://github.com/Ssovelich
 Telegram: @ssovelich
-Информація про автора: Проект розробила Станіслав Сова. GitHub: https://github.com/Ssovelich
