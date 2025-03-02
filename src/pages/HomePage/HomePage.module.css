@@ -1,0 +1,39 @@
+.wrap {
+  background-image: image-set(
+    url("../../assets/img/bg.png") 1x,
+    url("../../assets/img/bg@2x.png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 436px 0 60px 0;
+}
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+  color: var(--color-white);
+  margin-bottom: 40px;
+}
+.btn {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+  border-radius: 12px;
+  width: 276px;
+  height: 44px;
+  font-weight: 600;
+  line-height: 32px;
+  transition: background-color var(--transition);
+}
+.btn:hover {
+  background-color: var(--color-blue);
+}
