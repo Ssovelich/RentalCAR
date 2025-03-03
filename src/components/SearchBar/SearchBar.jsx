@@ -22,7 +22,7 @@ const SearchBar = () => {
     dispatch(fetchBrands());
   }, [dispatch]);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
         setOpenSelector(null);
@@ -69,6 +69,18 @@ const SearchBar = () => {
     dispatch(fetchCars({ page: 1, filters: localFilters }));
   };
 
+  const handleReset = () => {
+    const resetFilters = {
+      brand: "",
+      rentalPrice: "",
+      minMileage: "",
+      maxMileage: "",
+    };
+    setLocalFilters(resetFilters);
+    dispatch(setFilter(resetFilters));
+    dispatch(fetchCars({ page: 1, filters: resetFilters }));
+  };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit} ref={filterRef}>
       <div>
@@ -103,33 +115,26 @@ const SearchBar = () => {
             className={`${styles.input} ${styles.inputMileage}`}
             type="text"
             name="minMileage"
-            value={
-              localFilters.minMileage
-                ? `From ${Number(localFilters.minMileage).toLocaleString(
-                    "en-US"
-                  )}`
-                : "From "
-            }
+            value={localFilters.minMileage ? `From ${Number(localFilters.minMileage).toLocaleString("en-US")}` : "From "}
             onChange={(event) => handleChange("minMileage", event.target.value)}
           />
           <input
             className={`${styles.input} ${styles.inputMileage}`}
             type="text"
             name="maxMileage"
-            value={
-              localFilters.maxMileage
-                ? `To ${Number(localFilters.maxMileage).toLocaleString(
-                    "en-US"
-                  )}`
-                : "To "
-            }
+            value={localFilters.maxMileage ? `To ${Number(localFilters.maxMileage).toLocaleString("en-US")}` : "To "}
             onChange={(event) => handleChange("maxMileage", event.target.value)}
           />
         </div>
       </div>
-      <button className={styles.btn} type="submit">
-        Search
-      </button>
+      <div className={styles.btnContainer}>
+        <button className={styles.btn} type="submit">
+          Search
+        </button>
+        <button className={styles.btn} type="button" onClick={handleReset}>
+          Reset
+        </button>
+      </div>
     </form>
   );
 };
