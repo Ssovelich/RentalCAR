@@ -83,51 +83,65 @@ const SearchBar = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} ref={filterRef}>
-      <div>
-        <p className={styles.labelText}>Car brand</p>
-        <CustomSelector
-          options={brandOptions}
-          id="brand"
-          value={localFilters.brand}
-          onChange={(val) => handleChange("brand", val)}
-          placeholder="Choose a brand"
-          isOpen={openSelector === "brand"}
-          setOpenSelector={setOpenSelector}
-        />
+      <div className={styles.customWrap}>
+        <div>
+          <p className={styles.labelText}>Car brand</p>
+          <CustomSelector
+            options={brandOptions}
+            id="brand"
+            value={localFilters.brand}
+            onChange={(val) => handleChange("brand", val)}
+            placeholder="Choose a brand"
+            isOpen={openSelector === "brand"}
+            setOpenSelector={setOpenSelector}
+          />
+        </div>
+        <div>
+          <p className={styles.labelText}>Price / 1hour</p>
+          <CustomSelector
+            options={priceOptions}
+            id="price"
+            value={localFilters.rentalPrice}
+            onChange={(val) => handleChange("rentalPrice", val)}
+            placeholder="Choose a price"
+            formatValue={(val) => (val ? `To $${val}` : "Choose a price")}
+            isOpen={openSelector === "price"}
+            setOpenSelector={setOpenSelector}
+          />
+        </div>
       </div>
-      <div>
-        <p className={styles.labelText}>Price / 1hour</p>
-        <CustomSelector
-          options={priceOptions}
-          id="price"
-          value={localFilters.rentalPrice}
-          onChange={(val) => handleChange("rentalPrice", val)}
-          placeholder="Choose a price"
-          formatValue={(val) => (val ? `To $${val}` : "Choose a price")}
-          isOpen={openSelector === "price"}
-          setOpenSelector={setOpenSelector}
-        />
-      </div>
-      <div>
+      <div className={styles.mileageWrap}>
         <p className={styles.labelText}>Car mileage / km</p>
         <div className={styles.wrapInputMileage}>
           <input
             className={`${styles.input} ${styles.inputMileage}`}
             type="text"
             name="minMileage"
-            value={localFilters.minMileage ? `From ${Number(localFilters.minMileage).toLocaleString("en-US")}` : "From "}
+            value={
+              localFilters.minMileage
+                ? `From ${Number(localFilters.minMileage).toLocaleString(
+                    "en-US"
+                  )}`
+                : "From "
+            }
             onChange={(event) => handleChange("minMileage", event.target.value)}
           />
           <input
             className={`${styles.input} ${styles.inputMileage}`}
             type="text"
             name="maxMileage"
-            value={localFilters.maxMileage ? `To ${Number(localFilters.maxMileage).toLocaleString("en-US")}` : "To "}
+            value={
+              localFilters.maxMileage
+                ? `To ${Number(localFilters.maxMileage).toLocaleString(
+                    "en-US"
+                  )}`
+                : "To "
+            }
             onChange={(event) => handleChange("maxMileage", event.target.value)}
           />
         </div>
       </div>
-      <div className={styles.btnContainer}>
+      <div className={styles.btnWrap}>
         <button className={styles.btn} type="submit">
           Search
         </button>

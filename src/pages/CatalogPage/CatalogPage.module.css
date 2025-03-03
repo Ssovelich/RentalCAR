@@ -1,3 +1,22 @@
 .wrap {
+    padding: 20px 20px 20px;
+  }
+  /* (375px) */
+@media screen and (min-width: 375px) {
+  .wrap {
+    padding: 30px 30px 30px;
+  }
+}
+/* (768px) */
+@media screen and (min-width: 768px) {
+  .wrap{
+    padding: 40px 60px 40px;
+  }
+}
+
+/* (1440px) */
+@media screen and (min-width: 1440px) {
+  .wrap{
     padding: 84px 120px 124px;
   }
+}

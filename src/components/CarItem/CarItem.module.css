@@ -2,16 +2,18 @@
   position: relative;
   margin-bottom: 16px;
 }
+
 .img {
   width: 100%;
-  height: 268px;
+  height: 200px;
   border-radius: 16px;
   object-fit: cover;
 }
+
 .btnIcon {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   padding: 0;
   width: 16px;
   height: 16px;
@@ -19,51 +21,108 @@
   border: transparent;
   fill: var(--color-white);
 }
+
 .wrapTitle {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
   margin-bottom: 8px;
 }
+
 .model {
   color: var(--color-light-blue);
 }
+
 .wrapDetails {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 4px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
+
 .details {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
   color: var(--color-grey);
 }
+
 .span {
   position: relative;
 }
+
 .span::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: -4px;
   transform: translateY(-50%);
   width: 1px;
-  height: 16px;
+  height: 12px;
   background-color: var(--color-light-grey);
 }
+
 .btn {
   background-color: var(--color-light-blue);
   color: var(--color-white);
   border-radius: 12px;
   width: 100%;
-  padding: 12px 0;
+  padding: 10px 0;
   transition: background-color var(--transition);
 }
+
 .btn:hover {
   background-color: var(--color-blue);
+}
+
+/* Для мобільних (375px) */
+@media screen and (min-width: 375px) {
+  .img {
+    height: 220px;
+  }
+
+  .btnIcon {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* Для планшетів (768px) */
+@media screen and (min-width: 768px) {
+  .img {
+    height: 250px;
+  }
+
+  .details {
+    gap: 12px;
+  }
+
+  .wrapDetails {
+    margin-bottom: 32px;
+  }
+
+  .span::after {
+    height: 14px;
+    right: -6px;
+  }
+}
+
+/* Для десктопів (1440px) */
+@media screen and (min-width: 1440px) {
+  .img {
+    height: 268px;
+  }
+
+  .wrapDetails {
+    margin-bottom: 32px;
+  }
+
+  .span::after {
+    height: 16px;
+    right: -6px;
+  }
 }
