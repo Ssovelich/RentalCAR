@@ -65,23 +65,20 @@
   border-radius: 12px;
 }
 .btnWrap {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .btn {
-    background-color: var(--color-light-blue);
-    color: var(--color-white);
-    border-radius: 12px;
-    padding: 12px 0;
-    width: 100%;
-    max-width: 204px;
-    min-width: 97px;
-    transition: background-color var(--transition);
-    text-align: center;
-  }
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 98px;
+  transition: background-color var(--transition);
+  text-align: center;
+}
 .btn:hover {
   background-color: var(--color-blue);
 }
@@ -96,6 +93,9 @@
   .form {
     margin-bottom: 34px;
   }
+  .input {
+    width: 320px;
+  }
   .customWrap {
     flex-direction: row;
   }
@@ -103,6 +103,9 @@
     flex-direction: row;
     gap: 8;
   }
+  .btn {
+     width: 320px;
+      }
 }
 
 /* (1440px) */
@@ -111,6 +114,9 @@
     flex-direction: row;
     align-items: end;
     margin-bottom: 56px;
+  }
+  .input {
+    width: 204px;
   }
   .wrapInputMileage {
     gap: 0;
@@ -122,4 +128,7 @@
   .inputMileage:last-child {
     border-radius: 0 12px 12px 0;
   }
+  .btn {
+    width: 98px;
+     }
 }

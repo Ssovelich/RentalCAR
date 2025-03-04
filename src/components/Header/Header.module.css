@@ -23,6 +23,6 @@
 /* (1440px) */
 @media screen and (min-width: 1440px) {
   .header {
-    padding: 0px 120px;
+    padding: 24px 120px;
   }
 }
